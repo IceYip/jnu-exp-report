@@ -1,4 +1,5 @@
-\LoadClass{ctexart}
+\LoadClass{article}
+\usepackage{ctex}
 \usepackage{geometry}
 \geometry{left=3.18cm,right=3.18cm,top=4.04cm,bottom=2.54cm,headsep=1cm,headheight=35pt}
 \usepackage{fontspec}
@@ -19,7 +20,7 @@
 \xpatchcmd \fontspec_new_script:nn
   { \__fontspec_warning:nxx }
   { \__fontspec_info:nxx }
-  {}{\fail}
+  {}{}
 % redeclare
 \newfontscript{CJK}{hani}
 % \newfontscript{CJK~Ideographic}{hani}
@@ -79,8 +80,6 @@
 \def\temp#1{\gdef\@temp{#1}}
 \def\humid#1{\gdef\@humid{#1}}
 
-% 设置section左对齐，默认是居中
-\ctexset{section={format={\Large\textbf}}}
 % 设置章节编号
 \renewcommand\thesection{\chinese{section}、}
 \renewcommand\thesubsection{\arabic{subsection}.}
