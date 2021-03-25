@@ -4,6 +4,8 @@
 
 这是一份暨南大学本科实验报告的 LaTeX 模版。本模版在 TeX Live 2020/Arch Linux 环境下测试通过。
 
+本实验报告和 Word 版高度一致，[点击这里预览](https://github.com/IceYip/jnu-exp-report/blob/main/Problem.pdf)。
+
 有了这个 LaTeX 模版：
 
 - 可以在没有 Office 的情况下写实验报告了
