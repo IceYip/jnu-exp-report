@@ -1,0 +1,87 @@
+\documentclass{ExpReport}
+
+\course{模拟电子技术实验} %课程名称
+\director{赵钱孙，李周吴} %指导老师
+\author{郑王冯，陈禇卫} %学生姓名
+\classroom{南海楼} %实验地点
+\title{晶体管共射极单管放大器} %实验名称
+\expno{080812345601} %实验编号
+\exptype{} %实验项目类型，没有要求的话请留空
+\authorno{2020101234，2019051234} %学号
+\college{信息科学技术学院} %学院
+\department{电子} %系
+\major{电子科学与技术} %专业
+
+\date{2021年3月1日 $\sim$ 2021年3月1日} %时间，可删掉
+
+\temp{} %温度，可留空
+\humid{} %湿度，可留空
+
+\begin{document}
+    \maketitle
+    
+    \section{实验目的}
+
+    \begin{enumerate}
+        \item 学会放大器静态工作点的调试方法，分析静态工作点对放大器性能的影
+        响。
+        \item 掌握放大器电压放大倍数、输入电阻、输出电阻及最大不失真输出电压
+        的测试方法。
+        \item 熟悉常用电子仪器及模拟电路实验设备的使用。
+    \end{enumerate}
+
+    \section{实验原理}
+
+    \subsection{实验原理}
+    它的静态工作点可用下式估算：
+    $$
+    U_B = \frac{R_{B1}}{R_{B1}+R_{B2}}U_{CC}
+    $$
+
+    \subsection{实验内容}
+
+    \section{调试分析与测试结果}
+
+    放大器的幅频特性是指放大器的电压放大倍数 $A_U$与输入信号频率 $f$ 之间的
+关系曲线。$A_{um}$为中频电压放大倍数，通常规定电压放大倍数随频率变化下降到中频放大倍数的 $1/\sqrt{2}$ 倍。
+
+    放大器的幅率特性就是测量不同频率信号时的电压放大倍数 $A_U$。
+\newpage
+\appendix
+\section*{附录 （程序清单） }
+\subsection{Problem.py}
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+print("Hello")
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+...
+    return M
+\end{lstlisting}
+
+\subsection{Problem.m}
+\begin{lstlisting}[language=matlab]
+for n = 1:2
+    for m = 1:3
+        fprintf('n = %3u m = %3u \r', n, m)
+        % This is a comment
+    end
+end
+\end{lstlisting}
+
+\subsection{Problem.c}
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+int main(){
+    printf("Hello world");
+    // This is a comment.
+}
+\end{lstlisting}
+
+\end{document}
