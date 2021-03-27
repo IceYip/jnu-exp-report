@@ -1,0 +1,104 @@
+% 关闭 ctex 的中文特性
+\PassOptionsToPackage{scheme=plain}{ctex}
+\documentclass{ExpReport}
+
+\course{数值计算实验} %课程名称
+\director{Your Director} %指导老师
+\author{学生A，学生B} %学生姓名
+\classroom{N117} %实验地点
+\title{Computing Problems} %实验名称
+\expno{080812345601} %实验编号
+\exptype{} %实验项目类型，没有要求的话请留空
+\authorno{2020101234，2019051234} %学号
+\college{信息科学技术学院} %学院
+\department{计算机科学} %系
+\major{计算机科学与技术} %专业
+
+\date{2021年3月1日 $\sim$ 2021年3月1日} %时间，可删掉，删掉后可以自动生成时间
+
+\temp{} %温度，可留空
+\humid{} %湿度，可留空
+
+% 设置章节编号为罗马数字，符合英文习惯
+\renewcommand\thesection{\Roman{section}.}
+
+\begin{document}
+    % 因为 ctex 的中文特性被关闭，行间距由 1.3 变回 1.0 ，所以这里我们要重新调整标题区的表格间距
+    \begingroup
+    \renewcommand\arraystretch{1.65}
+    \maketitle
+    \endgroup
+    % 请不要移除上述代码
+
+    \section{Problem}
+
+    Let A be the 1000 $\times$ 1000 matrix with entries $A(i, i) = i, A(i, i + 1) =
+A(i + 1, i) = \frac{1}{2}, A(i, i + 2) = A(i + 2, i) = \frac{1}{2}$ for all i that fit within the matrix.
+    \begin{itemize}
+        \item Solve the system with $Ax = [1, 1, · · · , 1]^T$ by the following methods in 15 steps:
+        \begin{enumerate}
+            \item The Jacobi Method;
+            \item The Gauss-Seidel Method;
+            \item SOR with $\omega = 1.1$;
+            \item The Conjugate Gradient Method;
+            \item The Conjugate Gradient Method with Jacobi preconditioner.
+        \end{enumerate}
+        \item Report the errors of every step for each method.
+    \end{itemize}
+
+    \section{Algorithm Summary}
+
+    \subsection{The Jacobi Method}
+    The Jacobi Method is a form of fixed-point iteration for a system of equations.
+
+    \begin{itemize}
+        \item Let D denote the main diagonal of $A$, $L$ denote the lower triangle of $A$ (entries below the main diagonal), and $U$ denote the upper triangle (entries above the main diagonal).
+        \item Then $A = L + D + U$ and the equation to be solved is $L x + Dx + U x = b$. Note that this use of $L$ and $U$ differs from the use in the $LU$ factorization, since all diagonal entries of this $L$ and $U$ are zero.
+    \end{itemize}
+
+    
+    \section{Experimental Summary}
+
+    In this experiment, we use five methods to solve the system with $Ax = [1, 1, 
+    ... , 1]^T$ in 15 steps. We find that the Gauss-Seidel method converges the fastest and the error of the result is the smallest. Next is the Conjugate Gradient method with Jacobi preconditioner, then is the SOR with $\omega=1.1$, next is the Jacobi method. The worst is the Conjugate Gradient method which is far inferior to other methods.
+
+    We notice that matrix A is not A strictly diagonally dominant matrix, but A weakly diagonally dominant matrix. The applicable condition of the first three methods (Jacobi, GAuss-Seidel, SOR) is strictly diagonally dominant matrix, so the first three methods are not suitable for this experiment.
+\newpage
+\appendix
+\section{Appendix: Source Code}
+\subsection{Problem.py}
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+print("Hello")
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+...
+    return M
+\end{lstlisting}
+
+\subsection{Problem.m}
+\begin{lstlisting}[language=matlab]
+for n = 1:2
+    for m = 1:3
+        fprintf('n = %3u m = %3u \r', n, m)
+        % This is a comment
+    end
+end
+\end{lstlisting}
+
+\subsection{Problem.c}
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+int main(){
+    printf("Hello world");
+    // This is a comment.
+}
+\end{lstlisting}
+
+\end{document}
