@@ -1,3 +1,4 @@
+\PassOptionsToPackage{AutoFakeBold}{xeCJK}
 \LoadClass{article}
 \usepackage{ctex}
 \usepackage{geometry}
@@ -43,11 +44,6 @@
 \makeatletter
 \makeatother
 
-\NewDocumentCommand{\kai}{}{\CJKfontspec{FandolKai}[
-        AutoFakeBold,
-        AutoFakeSlant,
-      ] \selectfont}
-
 \makeatletter
 
 \def\course#1{\gdef\@course{#1}}
@@ -91,11 +87,9 @@
 }
 
 \makeatother
-
 \pagestyle{fancy}
 \fancyhead{}
-
-\fancyhead[C]{{\kai  \fontsize{22pt}{\baselineskip}\selectfont  \bfseries 暨南大学本科实验报告专用纸 }(附页) \\  }
+\fancyhead[C]{{\bfseries \kaishu \fontsize{22pt}{\baselineskip}\selectfont 暨南大学本科实验报告专用纸 }(附页) \\  }
 \fancyfoot[C]{\thepage}
 
 \makeatletter
@@ -105,11 +99,11 @@
     \vspace*{-2cm}
     %\renewcommand\arraystretch{1.65}
     \begin{center}
-        \fontsize{22pt}{\baselineskip}\selectfont \kai \bfseries 暨南大学本科实验报告专用纸
+        \fontsize{22pt}{\baselineskip}\selectfont \kaishu \bfseries 暨南大学本科实验报告专用纸
     \end{center}
     \vspace*{-0.3cm}
     \begin{table}[htbp]
-        \kai
+        \kaishu
         \fontsize{14pt}{\baselineskip}\selectfont
         \adjustbox{center}{
             \begin{tabular}{l p{6.9cm}<{\centering} l p{3.6cm}}
