@@ -100,9 +100,10 @@
 
 \makeatletter
 \renewcommand\maketitle{
+    \begingroup
     \thispagestyle{empty}
     \vspace*{-2cm}
-    \renewcommand\arraystretch{1.5}
+    %\renewcommand\arraystretch{1.65}
     \begin{center}
         \fontsize{22pt}{\baselineskip}\selectfont \kai \bfseries 暨南大学本科实验报告专用纸
     \end{center}
@@ -111,7 +112,7 @@
         \kai
         \fontsize{14pt}{\baselineskip}\selectfont
         \adjustbox{center}{
-            \begin{tabular}{l p{7cm}<{\centering} l p{3.6cm}}
+            \begin{tabular}{l p{6.9cm}<{\centering} l p{3.6cm}}
                 课程名称 & \@course & 成绩评定 &              \\ \cline{2-2} \cline{4-4}
             \end{tabular}
         }
@@ -126,13 +127,13 @@
             \end{tabular}
         }
         \adjustbox{center}{
-            \begin{tabular}{l p{4cm}<{\centering} l p{7.6cm}<{\centering}}
+            \begin{tabular}{l p{4cm}<{\centering} l p{7.5cm}<{\centering}}
                 学生姓名 & \@author & 学号 & \@authorno \\ \cline{2-2} \cline{4-4}
             \end{tabular}
         }
         
         \adjustbox{center}{
-            \begin{tabular}{l p{4.2cm}<{\centering} l p{2.6cm}<{\centering} l p{4.4cm}<{\centering}}
+            \begin{tabular}{l p{4.15cm}<{\centering} l p{2.6cm}<{\centering} l p{4.4cm}<{\centering}}
             学院 & \@college & 系 & \@department & 专业   & \@major \\
             \cline{2-2} \cline{4-4} \cline{6-6} 
             \end{tabular}
@@ -145,8 +146,7 @@
         }
 
     \end{table}
+    \endgroup
 }
 
 \makeatother
-
-\linespread{1.0}\selectfont
