@@ -3,7 +3,6 @@
 \usepackage{geometry}
 \geometry{left=3.18cm,right=3.18cm,top=4.04cm,bottom=2.54cm,headsep=1cm,headheight=35pt}
 \usepackage{fontspec}
-\usepackage{amsmath}
 \usepackage{makecell}
 \usepackage{fancyhdr}
 \usepackage{adjustbox}
@@ -44,7 +43,7 @@
 \makeatletter
 \makeatother
 
-\NewDocumentCommand{\kai}{}{\CJKfontspec{楷体}[
+\NewDocumentCommand{\kai}{}{\CJKfontspec{FandolKai}[
         AutoFakeBold,
         AutoFakeSlant,
       ] \selectfont}
@@ -103,52 +102,51 @@
 \renewcommand\maketitle{
     \thispagestyle{empty}
     \vspace*{-2cm}
-    {\raggedright % Note the extra {
-        \begin{center}
-            \fontsize{22pt}{\baselineskip}\selectfont \kai \bfseries 暨南大学本科实验报告专用纸
-        \end{center}
-        \vspace*{-0.3cm}
-        \begin{table}[htbp]
-            \kai
-            \renewcommand\arraystretch{0.8}
-            \fontsize{14pt}{\baselineskip}\selectfont
-            \adjustbox{center}{
-                \begin{tabular}{l p{7cm}<{\centering} l p{3.6cm}}
-                    课程名称& \@course & 成绩评定 &              \\ \cline{2-2} \cline{4-4}
-                \end{tabular}
-            }
-            \adjustbox{center}{
-                \begin{tabular}{l p{6cm}<{\centering} l p{3.6cm}<{\centering}}
-                    实验项目名称 & \@title & 指导老师 & \@director  \\ \cline{2-2} \cline{4-4}
-                \end{tabular}
-            }
-            \adjustbox{center}{
-                \begin{tabular}{l p{3cm}<{\centering} l p{1.2cm}<{\centering} l p{1.6cm}<{\centering}}
-                    实验项目编号 &  \@expno & 实验项目类型 & \@exptype  & 实验地点 & \@classroom \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                \end{tabular}
-            }
-            \adjustbox{center}{
-                \begin{tabular}{l p{4cm}<{\centering} l p{7.6cm}<{\centering}}
-                    学生姓名    &  \@author        & 学号     &  \@authorno  \\ \cline{2-2} \cline{4-4}
-                \end{tabular}
-            }
-            
-            \adjustbox{center}{
-                \begin{tabular}{l p{4.2cm}<{\centering} l p{2.6cm}<{\centering} l p{4.4cm}<{\centering}}
-                学院     &{\@college}& 系      & \@department & 专业   & \@major \\
-                \cline{2-2} \cline{4-4} \cline{6-6} 
-                \end{tabular}
-            }
+    \renewcommand\arraystretch{1.5}
+    \begin{center}
+        \fontsize{22pt}{\baselineskip}\selectfont \kai \bfseries 暨南大学本科实验报告专用纸
+    \end{center}
+    \vspace*{-0.3cm}
+    \begin{table}[htbp]
+        \kai
+        \fontsize{14pt}{\baselineskip}\selectfont
+        \adjustbox{center}{
+            \begin{tabular}{l p{7cm}<{\centering} l p{3.6cm}}
+                课程名称 & \@course & 成绩评定 &              \\ \cline{2-2} \cline{4-4}
+            \end{tabular}
+        }
+        \adjustbox{center}{
+            \begin{tabular}{l p{6cm}<{\centering} l p{3.6cm}<{\centering}}
+                实验项目名称 & \@title & 指导老师 & \@director  \\ \cline{2-2} \cline{4-4}
+            \end{tabular}
+        }
+        \adjustbox{center}{
+            \begin{tabular}{l p{3cm}<{\centering} l p{1.2cm}<{\centering} l p{1.6cm}<{\centering}}
+                实验项目编号 & \@expno & 实验项目类型 & \@exptype  & 实验地点 & \@classroom \\ \cline{2-2} \cline{4-4} \cline{6-6}
+            \end{tabular}
+        }
+        \adjustbox{center}{
+            \begin{tabular}{l p{4cm}<{\centering} l p{7.6cm}<{\centering}}
+                学生姓名 & \@author & 学号 & \@authorno \\ \cline{2-2} \cline{4-4}
+            \end{tabular}
+        }
+        
+        \adjustbox{center}{
+            \begin{tabular}{l p{4.2cm}<{\centering} l p{2.6cm}<{\centering} l p{4.4cm}<{\centering}}
+            学院 & \@college & 系 & \@department & 专业   & \@major \\
+            \cline{2-2} \cline{4-4} \cline{6-6} 
+            \end{tabular}
+        }
 
-            \adjustbox{center}{
-                \begin{tabular}{l p{8.4cm}<{\centering} l p{0.3cm}<{\centering} l p{0.3cm}<{\centering}}
-                    实验日期     & \@date & 温度 & \@temp & $^{\circ}$C 湿度 & \@humid \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                \end{tabular}
-            }
+        \adjustbox{center}{
+            \begin{tabular}{l p{8.4cm}<{\centering} l p{0.3cm}<{\centering} l p{0.3cm}<{\centering}}
+                实验日期 & \@date & 温度 & \@temp & $^{\circ}$C 湿度 & \@humid \\ \cline{2-2} \cline{4-4} \cline{6-6}
+            \end{tabular}
+        }
 
-        \end{table}
-
-    }
+    \end{table}
 }
 
 \makeatother
+
+\linespread{1.0}\selectfont
